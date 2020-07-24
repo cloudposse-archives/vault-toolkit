@@ -1,4 +1,4 @@
-FROM vault:1.5.0
+FROM alpine:3.11.6
 
 # install the cloudposse alpine repository
 ADD https://apk.cloudposse.com/ops@cloudposse.com.rsa.pub /etc/apk/keys/
@@ -10,7 +10,10 @@ RUN sed -i 's|http://dl-cdn.alpinelinux.org|https://alpine.global.ssl.fastly.net
     echo "@community https://alpine.global.ssl.fastly.net/alpine/edge/community" >> /etc/apk/repositories
 
 # Install Postgres Client
-RUN apk add --no-cache postgresql-client=11.7-r0
+RUN apk add --no-cache postgresql-client=12.2-r0
 
 # Install Chamber
 RUN apk add --no-cache chamber@cloudposse
+
+# Install Vault
+RUN apk add --no-cache vault@cloudposse
