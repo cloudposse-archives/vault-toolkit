@@ -17,6 +17,6 @@ RUN apk add python3 && \
 
 # Install our utilities
 RUN apk add --no-cache postgresql-client=12.2-r0 \
-    chamber@cloudposse \
+    jq \
     vault@cloudposse \
     bash
