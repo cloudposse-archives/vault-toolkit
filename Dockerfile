@@ -16,7 +16,7 @@ RUN apk add python3 && \
         pip install -r /requirements.txt --ignore-installed --prefix=/usr --no-build-isolation --no-warn-script-location
 
 # Install our utilities
-RUN apk add --no-cache postgresql-client=12.2-r0 \
+RUN apk add --no-cache postgresql-client=12.4-r0 \
     jq \
     vault@cloudposse \
     bash
